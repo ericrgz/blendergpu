@@ -1,5 +1,6 @@
 FROM nvidia/cuda:9.0-runtime
-MAINTAINER Yu You <yu.you@nokia.com>
+# inspired from xxx
+MAINTAINER eric <er@iex.ec>
 
 ENV BLENDER_MAJOR 2.79
 ENV BLENDER_VERSION 2.79b
@@ -25,6 +26,7 @@ RUN ln -s /usr/local/blender/blender /usr/bin/blender
 
 COPY set_gpu.py /tmp/set_gpu.py
 COPY benchmark_279_denoise_disney.blend /tmp/
+
 #VOLUME /data
 
 #RUN cd /tmp && curl -O https://bootstrap.pypa.io/get-pip.py && \
