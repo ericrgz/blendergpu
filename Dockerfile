@@ -1,5 +1,5 @@
 FROM nvidia/cuda:9.0-runtime
-# inspired from xxx
+#inspired by https://github.com/yuyou/blender/blob/master/7.5/Dockerfile
 MAINTAINER eric <er@iex.ec>
 
 ENV BLENDER_MAJOR 2.79
@@ -26,13 +26,6 @@ RUN ln -s /usr/local/blender/blender /usr/bin/blender
 
 COPY set_gpu.py /tmp/set_gpu.py
 COPY benchmark_279_denoise_disney.blend /tmp/
-
-#VOLUME /data
-
-#RUN cd /tmp && curl -O https://bootstrap.pypa.io/get-pip.py && \
-#    python3 get-pip.py && \
-
-#    rm get-pip.py
 
 #CMD blender --background --python /tmp/set_gpu.py
 CMD blender --background --python /tmp/set_gpu.py /tmp/benchmark_279_denoise_disney.blend --render-output /tmp/ --render-frame 1 
