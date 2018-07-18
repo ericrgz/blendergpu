@@ -1,9 +1,12 @@
 #Readme.md
+This container generates a image from the gpu benchmark
 
+Start the container 
+```
+sudo docker run --runtime=nvidia ericro/blendergpu
+```
 
-
-
-For any benchmark, GPU util is close to  100% 
+For any benchmarks, GPU util is close to 100% 
 [link benchmark](http://download.blender.org/institute/benchmark/latest_snapshot.html)
 
 ## NVIDIA GPU blender BMW27 benchmark
