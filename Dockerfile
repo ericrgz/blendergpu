@@ -27,5 +27,7 @@ RUN ln -s /usr/local/blender/blender /usr/bin/blender
 COPY set_gpu.py /tmp/set_gpu.py
 COPY benchmark_279_denoise_disney.blend /tmp/
 
-#CMD blender --background --python /tmp/set_gpu.py
-CMD blender --background --python /tmp/set_gpu.py /tmp/benchmark_279_denoise_disney.blend --render-output /tmp/ --render-frame 1 
+
+CMD blender --background --python /tmp/set_gpu.py /tmp/benchmark_279_denoise_disney.blend --render-output /tmp/ --render-frame 1
+# For the next line, use "-v /tmp:/iexec" in the docker run command line to output the image created in /tmp og the host 
+#CMD blender --background --python /tmp/set_gpu.py /tmp/benchmark_279_denoise_disney.blend --render-output /iexec/ --render-frame 1
